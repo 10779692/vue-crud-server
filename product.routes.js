@@ -1,20 +1,22 @@
 const express = require("express");
-const router = express.Router();
-const products = "./product.controller.js";
+const prodRouter = express.Router();
+const products = require('./product.controller.js');
 
-// Create a new Product
-router.post("/products", products.create);
 
-// Retrieve all Products
-router.get("/products", products.findAll);
+function router() {
 
-// Retrieve a single Product with productId
-router.get("/products/:productId", products.findOne);
+    prodRouter.route('/products')
+        .post(products.create)
+        .get(products.findAll);
 
-// Update a Note with productId
-router.put("/products/:productId", products.update);
+    prodRouter.route('/products/:productId')
+        .put(products.update)
+        .get(products.findOne);
 
-// Delete a Note with productId
-router.delete("/products/delete/:productId", products.delete);
+    prodRouter.route('/products/delete/:productId')
+        .delete(products.delete)
+    
+    return prodRouter;
+}
 
 module.exports = router;
