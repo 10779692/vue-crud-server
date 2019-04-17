@@ -34,8 +34,8 @@ mongoose.connect(config.url, {
 });
 
 // default route
-app.get('/', (req, res) => {
-    res.json({"message": "Welcome to ZeptoBook Product app"});
+app.use('/', (req, res) => {
+    res.json({"message": "Welcome to Apple Product app"});
 });
 
 // listen on port 3000
