@@ -7,6 +7,11 @@ const app = express();
 // parse requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  next();
+});
 
 //Enable CORS for all HTTP methods
 app.use(function(req, res, next) {
