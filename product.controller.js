@@ -13,7 +13,9 @@ exports.create = (req, res) => {
     const product = new Product({
         title: req.body.title, 
         price: req.body.price,
-        description: req.body.description
+        description: req.body.description,
+        location: req.body.location,
+        employee: req.body.employee
     });
 
     // Save Product in the database
@@ -74,7 +76,9 @@ exports.update = (req, res) => {
     Product.findByIdAndUpdate(req.params.productId, {
         title: req.body.title, 
         price: req.body.price,
-        description: req.body.description
+        description: req.body.description,
+        location: req.body.location,
+        employee: req.body.employee
     }, {new: true})
     .then(product => {
         if(!product) {
