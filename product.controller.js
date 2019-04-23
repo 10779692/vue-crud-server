@@ -79,7 +79,7 @@ exports.update = (req, res) => {
         description: req.body.description,
         location: req.body.location,
         employee: req.body.employee
-    }, {new: true})
+    })
     .then(product => {
         if(!product) {
             return res.status(404).send({
