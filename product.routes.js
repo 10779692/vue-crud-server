@@ -15,9 +15,6 @@ function router() {
 
     prodRouter.route('/products/delete/:productId')
         .delete(products.delete)
-
-    prodRouter.route('/test')
-        .get(products.test);
     
     return prodRouter;
 }
