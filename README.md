@@ -16,5 +16,5 @@ URL HERE: https://vue-crud-server.herokuapp.com/
 "price": "Product Price",
 "description": "Product Description",
 "location": "Product Location",
-"employee": "Employee Name",
+"employee": "Employee Name"
 ```
