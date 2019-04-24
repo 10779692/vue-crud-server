@@ -45,6 +45,11 @@ app.use('/', (req, res) => {
     res.json({"message": "Welcome to Apple Product app"});
 });
 
+// test route
+app.use('/test', (req, res) => {
+    res.json({"message": "This is a test page"});
+});
+
 // listen on port 3000
 app.listen(process.env.PORT || 5000, () => {
     console.log("Server is listening on port 3000");
